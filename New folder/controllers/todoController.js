@@ -2,12 +2,12 @@ const toDo = require("../models/todomodule");
 const User = require("../models/userModule");
 
 exports.addToDo = async (req, res, next) => {
-    const userId = req.params.id
+    console.log(req.payload);
+    const userId = req.payload
     const title = req.body.title;
     const description = req.body.description;
     const data = req.body.data;
     try {
-
         const userFounded = await User.findById(userId);
         if (userFounded) {
             const todo = new toDo({
@@ -33,7 +33,7 @@ exports.addToDo = async (req, res, next) => {
 
 
 exports.deleteToDo = async (req, res, next) => {
-    const userId = req.params.userId;
+    const userId = req.payload;
     const toDoId = req.params.toDoId;
     console.log(userId)
     try {
@@ -64,7 +64,7 @@ exports.deleteToDo = async (req, res, next) => {
 
 
 exports.updateToDo = async (req, res, next) => {
-    const userId = req.params.userId;
+    const userId = req.payload;
     const toDoId = req.params.toDoId;
     const title = req.body.title;
     const description = req.body.description;
@@ -100,7 +100,7 @@ exports.updateToDo = async (req, res, next) => {
 
 
 exports.getToDo = async (req, res, next) => {
-    const userId = req.params.userId;
+    const userId = req.payload;
     const toDoId = req.params.toDoId;
     try {
         const toDoFounded = await toDo.find({
@@ -123,4 +123,23 @@ exports.getToDo = async (req, res, next) => {
 }
 
 
-
+exports.getAllToDo = async (req, res, next) => {
+    const userId = req.payload
+    try {
+        const toDoFounded = await toDo.find({
+            user: userId
+        });
+        if (toDoFounded.length != 0) {
+            res.status(200).json({
+                message: "Done",
+                toDo: toDoFounded
+            })
+        } else {
+            const error = new Error("your todo is empty");
+            error.statusCode = 404;
+            throw error;
+        }
+    } catch (error) {
+        next(error);
+    }
+}

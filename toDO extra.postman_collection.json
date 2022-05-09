@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "f7ec9b10-abe5-470f-8673-d857ac1fc941",
+		"name": "toDO extra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Delete ToDo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI3OGRjOWFjMzIwMDY4NGYzYzNkNzFiIiwiaWF0IjoxNjUyMDk1MTEwLCJleHAiOjE2NTQ2ODcxMTB9.jmLh3xU4cb6gKQ-yctQ0Lrcl7fEfVxnQ8QDCI2w5I2k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\":\"first to do\",\r\n\"description\":\"this is my fisrt todo to add \",\r\n\"data\":\"2022-02-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/v1/delete/6278e5cddc8723a51746eb8c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"delete",
+						"6278e5cddc8723a51746eb8c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add to do",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI3OGRjOWFjMzIwMDY4NGYzYzNkNzFiIiwiaWF0IjoxNjUyMDk1MTEwLCJleHAiOjE2NTQ2ODcxMTB9.jmLh3xU4cb6gKQ-yctQ0Lrcl7fEfVxnQ8QDCI2w5I2k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\":\"first to do after auth\",\r\n\"description\":\"this is my fisrt todo to add \",\r\n\"data\":\"2022-02-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/v1/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update toDo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI3OGRjOWFjMzIwMDY4NGYzYzNkNzFiIiwiaWF0IjoxNjUyMDk1MTEwLCJleHAiOjE2NTQ2ODcxMTB9.jmLh3xU4cb6gKQ-yctQ0Lrcl7fEfVxnQ8QDCI2w5I2k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\":\"updated to do after auth\",\r\n\"description\":\"this is my second todo to update \",\r\n\"data\":\"2022-02-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/v1/update/6278f9aadf7e66e101da8fca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"update",
+						"6278f9aadf7e66e101da8fca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get single toDo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI3OGRjOWFjMzIwMDY4NGYzYzNkNzFiIiwiaWF0IjoxNjUyMDk1MTEwLCJleHAiOjE2NTQ2ODcxMTB9.jmLh3xU4cb6gKQ-yctQ0Lrcl7fEfVxnQ8QDCI2w5I2k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/v1/get/6278e0af5c970af153c52506",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"get",
+						"6278e0af5c970af153c52506"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all toDo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI3OGRjOWFjMzIwMDY4NGYzYzNkNzFiIiwiaWF0IjoxNjUyMDk1MTEwLCJleHAiOjE2NTQ2ODcxMTB9.jmLh3xU4cb6gKQ-yctQ0Lrcl7fEfVxnQ8QDCI2w5I2k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/v1/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userSeed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/v1/seed/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"seed",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

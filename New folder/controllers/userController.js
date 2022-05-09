@@ -5,7 +5,6 @@ const generate = require("../helper/Utility");
 exports.signInUser = async (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
-    console.log("from auth back end")
     try {
         const user = await User.findOne({
             email: email
