@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "e2d1cd1f-745e-4833-9edb-9ce124656ee2",
+		"name": "toDo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userSeed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMzljZjAzYjYzYWI3Y2I1Mjg4NDMxNSIsIm5hbWUiOiJhZG5hbiIsImVtYWlsIjoiYWRuYW5rYW5ha3JpQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEyJHVVWnA1TzJsMEp5TTR3cjNFc1FQNE9ILlF3SkJPTHRQeUNsWGRoSlAxaVB6RU55UjQ0dHdHIiwiaXNBZG1pbiI6dHJ1ZSwiX192IjowLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTIyVDEzOjI4OjM1Ljk1NFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTIyVDEzOjI4OjM1Ljk1NFoifSwiaWF0IjoxNjQ5NzA3MTg4LCJleHAiOjE2NTIyOTkxODh9.Dt7eePbz2SteREssxl-KgeLyyYH-W5jhmQWBpy_H9rE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/v1/seed/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"seed",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete ToDo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\":\"first to do\",\r\n\"description\":\"this is my fisrt todo to add \",\r\n\"data\":\"2022-02-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/v1/delete/6278e5cddc8723a51746eb8c/6278e0af5c970af153c52507",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"delete",
+						"6278e5cddc8723a51746eb8c",
+						"6278e0af5c970af153c52507"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add toDo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\":\"first to do\",\r\n\"description\":\"this is my fisrt todo to add \",\r\n\"data\":\"2022-02-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/v1/add/6278dc9ac3200684f3c3d71b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"add",
+						"6278dc9ac3200684f3c3d71b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update toDo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\":\"updated to do\",\r\n\"description\":\"this is my second todo to update \",\r\n\"data\":\"2022-02-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/v1/update/6278e0af5c970af153c52506/6278dc9ac3200684f3c3d71c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"update",
+						"6278e0af5c970af153c52506",
+						"6278dc9ac3200684f3c3d71c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get single toDo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/v1/get/6278e0af5c970af153c52506/6278dc9ac3200684f3c3d71b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"get",
+						"6278e0af5c970af153c52506",
+						"6278dc9ac3200684f3c3d71b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all toDo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/v1/getAll/6278dc9ac3200684f3c3d71C",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"getAll",
+						"6278dc9ac3200684f3c3d71C"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
