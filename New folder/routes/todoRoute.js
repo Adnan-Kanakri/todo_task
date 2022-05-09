@@ -7,7 +7,7 @@ const toDoController = require("../controllers/todoController")
 route.post("/add/:id", toDoController.addToDo);
 route.delete("/delete/:toDoId/:userId", toDoController.deleteToDo);
 route.get("/get/:toDoId/:userId", toDoController.getToDo);
-// route.get("/getAll/:userId", toDoController.getAllToDo);
+route.get("/getAll/:userId", toDoController.getAllToDo);
 route.put("/update/:toDoId/:userId", toDoController.updateToDo);
 
 

@@ -123,24 +123,23 @@ exports.getToDo = async (req, res, next) => {
 }
 
 
-
-// exports.getAllToDo = async (req, res, next) => {
-//     const userId = req.params.userId
-//     try {
-//         const toDoFounded = await toDo.find({
-//             user: userId
-//         });
-//         if (toDoFounded.length != 0) {
-//             res.status(200).json({
-//                 message: "Done",
-//                 toDo: toDoFounded
-//             })
-//         } else {
-//             const error = new Error("your todo is empty");
-//             error.statusCode = 404;
-//             throw error;
-//         }
-//     } catch (error) {
-//         next(error);
-//     }
-// }
+exports.getAllToDo = async (req, res, next) => {
+    const userId = req.params.userId
+    try {
+        const toDoFounded = await toDo.find({
+            user: userId
+        });
+        if (toDoFounded.length != 0) {
+            res.status(200).json({
+                message: "Done",
+                toDo: toDoFounded
+            })
+        } else {
+            const error = new Error("your todo is empty");
+            error.statusCode = 404;
+            throw error;
+        }
+    } catch (error) {
+        next(error);
+    }
+}
